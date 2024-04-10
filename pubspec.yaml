@@ -50,6 +50,7 @@ dependencies:
   rxdart: ^0.27.7
   audioplayers: ^6.0.0
   syncfusion_flutter_gauges: ^24.2.9
+  timer_count_down: ^2.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
