@@ -51,6 +51,7 @@ dependencies:
   audioplayers: ^6.0.0
   syncfusion_flutter_gauges: ^24.2.9
   timer_count_down: ^2.2.2
+  google_fonts: ^6.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

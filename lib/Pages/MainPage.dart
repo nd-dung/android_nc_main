@@ -1,7 +1,7 @@
 import 'package:english_learning/Pages/Home.dart';
 import 'package:english_learning/Pages/InsightPage.dart';
 import 'package:english_learning/Pages/TestPage.dart';
-import 'package:english_learning/Pages/students_page.dart';
+import 'package:english_learning/Pages/exam/students_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
