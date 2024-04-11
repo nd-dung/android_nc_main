@@ -157,7 +157,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
                                   children: [
                                     Text('Score: ${student['score']}',
                                         style: TextStyle(fontSize: 16, color: Colors.green)),
-                                    SizedBox(width: 10),
+                                    SizedBox(width: 12),
                                     Text('DOB: ${student['birthDate']}',
                                         style: TextStyle(fontSize: 16, color: Colors.grey)),
                                   ],
