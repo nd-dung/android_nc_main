@@ -125,13 +125,59 @@ class _StudentsScreenState extends State<StudentsScreen> {
                       itemBuilder: (context, index) {
                         DocumentSnapshot student = snapshot.data!.docs[index];
                         return Card(
-                          child: ListTile(
-                            leading: Icon(Icons.person),
-
-                            title: Text(student['name']),
-                            subtitle: Text(
-                                'ID: ${student['id']} \nScore: ${student['score']}\nDOB: ${student['birthDate']}'),
-                            trailing: Text('Gmail: ${student['gmail']}\nGender: ${student['gender']}\nAddress: ${student['address
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.person, size: 50),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(student['name'],
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold)),
+                                          Text('ID: ${student['id']}',
+                                              style: TextStyle(fontSize: 16)),
+                                        ],
+                                      ),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text('Score: ${student['score']}',
+                                            style: TextStyle(fontSize: 16)),
+                                        Text('DOB: ${student['birthDate']}',
+                                            style: TextStyle(fontSize: 16)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('Gmail: ${student['gmail']}',
+                                        style: TextStyle(fontSize: 16)),
+                                    Text('Gender: ${student['gender']}',
+                                        style: TextStyle(fontSize: 16)),
+                                    Text('Address: ${student['address']}',
+                                        style: TextStyle(fontSize: 16)),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       },
