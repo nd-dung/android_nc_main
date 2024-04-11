@@ -18,6 +18,8 @@ class Student {
       'address': address,
       'birthDate': birthDate,
       'gender': gender,
+      'gmail': gmail,
+      'score': score,
     };
   }
 
