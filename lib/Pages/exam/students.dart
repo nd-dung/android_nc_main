@@ -2,7 +2,7 @@ class Student {
   String id;
   String name;
   String address;
-  DateTime birthDate;
+  String birthDate;
   String gender;
   String gmail;
   double score;
@@ -16,7 +16,7 @@ class Student {
       'id': id,
       'name': name,
       'address': address,
-      'birthDate': birthDate.toIso8601String(),
+      'birthDate': birthDate,
       'gender': gender,
     };
   }
@@ -26,7 +26,7 @@ class Student {
       id: map['id'],
       name: map['name'],
       address: map['address'],
-      birthDate: DateTime.parse(map['birthDate']),
+      birthDate: map['birthDate'],
       gender: map['gender'],
       gmail: map['gmail'],
       score: map['score'],

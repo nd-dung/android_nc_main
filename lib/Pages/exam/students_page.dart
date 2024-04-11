@@ -17,6 +17,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
   final TextEditingController genderController = TextEditingController();
   final TextEditingController gmailController = TextEditingController();
   final TextEditingController scoreController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +88,14 @@ class _StudentsScreenState extends State<StudentsScreen> {
                 ),
               ),
               SizedBox(height: 10),
+              TextField(
+                controller: addressController,
+                decoration: InputDecoration(
+                  hintText: 'Enter Student Address',
+                  labelText: 'Student Address',
+                  border: OutlineInputBorder(),
+                ),
+              ),
               ElevatedButton(
                 onPressed: () {
                   addStudentToFirebase();
@@ -103,11 +112,12 @@ class _StudentsScreenState extends State<StudentsScreen> {
   Future<void> addStudentToFirebase() async {
     String id = idController.text;
     String name = nameController.text;
-    String address = ''; // Add address input if needed
-    DateTime birthDate = DateTime.parse(dobController.text);
+    String address = addressController.text;
+    String birthDate = dobController.text;
     String gender = genderController.text;
     String gmail = gmailController.text;
     double score = double.parse(scoreController.text);
+
 
     Student student = Student(
       id: id,
