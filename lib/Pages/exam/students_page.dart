@@ -22,8 +22,31 @@ class _StudentsScreenState extends State<StudentsScreen> {
             children:[
               Text('Students Information',style: GoogleFonts.roboto(fontSize: 17,fontWeight: FontWeight.bold),),
               TextField(
-                
-              )
+                  onChanged: (_){
+
+                  },
+                  autocorrect: false,
+                  keyboardType: TextInputType.multiline,
+                  decoration: const InputDecoration(
+                    hintText: "Student id",
+                    border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.lightBlue)),
+                    enabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.lightBlue)),
+                    disabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.lightBlue)),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.lightBlue)),
+                    hintStyle: const TextStyle(
+                      color: Colors.lightBlue,
+                    ),
+                  ),
+                  style: GoogleFonts.roboto(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color:Colors.black
+                  )
+              ),
 
             ]
 
@@ -33,3 +56,4 @@ class _StudentsScreenState extends State<StudentsScreen> {
     );
   }
 }
+
