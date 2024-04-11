@@ -32,7 +32,8 @@ class _StudentsScreenState extends State<StudentsScreen> {
             children: [
               Text(
                 'Students Information',
-                style: GoogleFonts.roboto(fontSize: 17, fontWeight: FontWeight.bold),
+                style: GoogleFonts.roboto(
+                    fontSize: 17, fontWeight: FontWeight.bold),
               ),
               TextField(
                 controller: idController,
@@ -102,7 +103,41 @@ class _StudentsScreenState extends State<StudentsScreen> {
                 },
                 child: Text('Submit'),
               ),
+              StreamBuilder<QuerySnapshot>(
+                stream: FirebaseFirestore.instance
+                    .collection('students')
+                    .snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (snapshot.hasError) {
+                    return Text('Something went wrong');
+                  }
 
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  }
+
+                  return SizedBox(
+                    width: double.infinity,
+                    height: 400,
+                    child: ListView.builder(
+                      itemCount: snapshot.data!.docs.length,
+                      itemBuilder: (context, index) {
+                        DocumentSnapshot student = snapshot.data!.docs[index];
+                        return Card(
+                          child: ListTile(
+                            leading: Icon(Icons.person),
+                            title: Text(student['name']),
+                            subtitle: Text(
+                                'ID: ${student['id']} \nScore: ${student['score']}'),
+                            trailing: Text('Gender: ${student['gender']}'),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
+              )
             ],
           ),
         ),
@@ -119,7 +154,6 @@ class _StudentsScreenState extends State<StudentsScreen> {
     String gmail = gmailController.text;
     double score = double.parse(scoreController.text);
 
-
     Student student = Student(
       id: id,
       name: name,
@@ -130,7 +164,8 @@ class _StudentsScreenState extends State<StudentsScreen> {
       score: score,
     );
 
-    CollectionReference students = FirebaseFirestore.instance.collection('students');
+    CollectionReference students =
+        FirebaseFirestore.instance.collection('students');
     return students
         .doc(student.id)
         .set(student.toMap())
