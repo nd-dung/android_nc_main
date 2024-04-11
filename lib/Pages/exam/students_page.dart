@@ -126,6 +126,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
                         DocumentSnapshot student = snapshot.data!.docs[index];
                         return Card(
                           elevation: 5,
+                          shadowColor: Colors.grey,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
@@ -135,45 +136,48 @@ class _StudentsScreenState extends State<StudentsScreen> {
                               children: [
                                 Row(
                                   children: [
-                                    Icon(Icons.person, size: 50),
+                                    CircleAvatar(
+                                      radius: 25,
+                                      child: Icon(Icons.person, size: 30),
+                                      backgroundColor: Colors.blue,
+                                    ),
                                     SizedBox(width: 10),
                                     Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(student['name'],
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold)),
-                                          Text('ID: ${student['id']}',
-                                              style: TextStyle(fontSize: 16)),
-                                        ],
-                                      ),
+                                      child: Text(student['name'],
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.blue)),
                                     ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Text('Score: ${student['score']}',
-                                            style: TextStyle(fontSize: 16)),
-                                        Text('DOB: ${student['birthDate']}',
-                                            style: TextStyle(fontSize: 16)),
-                                      ],
-                                    ),
+                                    Text('ID: ${student['id']}',
+                                        style: TextStyle(fontSize: 16, color: Colors.grey)),
                                   ],
                                 ),
-                                SizedBox(height: 10),
                                 Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('Score: ${student['score']}',
+                                        style: TextStyle(fontSize: 16, color: Colors.green)),
+                                    SizedBox(width: 10),
+                                    Text('DOB: ${student['birthDate']}',
+                                        style: TextStyle(fontSize: 16, color: Colors.grey)),
+                                  ],
+                                ),
+                                Row(
                                   children: [
                                     Text('Gmail: ${student['gmail']}',
-                                        style: TextStyle(fontSize: 16)),
+                                        style: TextStyle(fontSize: 16, color: Colors.grey)),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
                                     Text('Gender: ${student['gender']}',
-                                        style: TextStyle(fontSize: 16)),
+                                        style: TextStyle(fontSize: 16, color: Colors.pink)),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
                                     Text('Address: ${student['address']}',
-                                        style: TextStyle(fontSize: 16)),
+                                        style: TextStyle(fontSize: 16, color: Colors.grey)),
                                   ],
                                 ),
                               ],
