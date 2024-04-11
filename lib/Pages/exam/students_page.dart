@@ -127,10 +127,11 @@ class _StudentsScreenState extends State<StudentsScreen> {
                         return Card(
                           child: ListTile(
                             leading: Icon(Icons.person),
+
                             title: Text(student['name']),
                             subtitle: Text(
-                                'ID: ${student['id']} \nScore: ${student['score']}'),
-                            trailing: Text('Gender: ${student['gender']}'),
+                                'ID: ${student['id']} \nScore: ${student['score']}\nDOB: ${student['birthDate']}'),
+                            trailing: Text('Gmail: ${student['gmail']}\nGender: ${student['gender']}\nAddress: ${student['address
                           ),
                         );
                       },
