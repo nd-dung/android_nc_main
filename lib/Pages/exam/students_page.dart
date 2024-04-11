@@ -21,33 +21,53 @@ class _StudentsScreenState extends State<StudentsScreen> {
           child:Column(
             children:[
               Text('Students Information',style: GoogleFonts.roboto(fontSize: 17,fontWeight: FontWeight.bold),),
-              TextField(
-                  onChanged: (_){
-
-                  },
-                  autocorrect: false,
-                  keyboardType: TextInputType.multiline,
-                  decoration: const InputDecoration(
-                    hintText: "Student id",
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.lightBlue)),
-                    enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.lightBlue)),
-                    disabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.lightBlue)),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.lightBlue)),
-                    hintStyle: const TextStyle(
-                      color: Colors.lightBlue,
-                    ),
-                  ),
-                  style: GoogleFonts.roboto(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                      color:Colors.black
-                  )
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Student ID',
+                  labelText: 'Student Name',
+                  border: OutlineInputBorder()
+                ),
               ),
-
+              SizedBox(height: 10,),
+              const TextField(
+                decoration: InputDecoration(
+                    hintText: 'Enter Student Name',
+                    labelText: 'Student Name',
+                    border: OutlineInputBorder()
+                ),
+              ),
+              SizedBox(height: 10,),
+              const TextField(
+                decoration: InputDecoration(
+                    hintText: 'Enter Student Date of Birth',
+                    labelText: 'Date of Birth',
+                    border: OutlineInputBorder()
+                ),
+              ),
+              SizedBox(height: 10,),
+              const TextField(
+                decoration: InputDecoration(
+                    hintText: 'Enter Student Gender',
+                    labelText: 'Gender',
+                    border: OutlineInputBorder()
+                ),
+              ),
+              SizedBox(height: 10,),
+              const TextField(
+                decoration: InputDecoration(
+                    hintText: 'Enter Student Gmail',
+                    labelText: 'Gmail',
+                    border: OutlineInputBorder()
+                ),
+              ),
+              SizedBox(height: 10,),
+              const TextField(
+                decoration: InputDecoration(
+                    hintText: 'Enter Student AVG Score',
+                    labelText: 'AVG Score',
+                    border: OutlineInputBorder()
+                ),
+              ),
             ]
 
           )

@@ -4,14 +4,12 @@ class Student {
   String address;
   DateTime birthDate;
   String gender;
+  String gmail;
+  double score;
 
-  Student({
-    required this.id,
-    required this.name,
-    required this.address,
-    required this.birthDate,
-    required this.gender,
-  });
+
+  Student({required this.id,required this.name, required this.address, required this.birthDate,required this.gender,
+    required this.gmail,required this.score});
 
   Map<String, dynamic> toMap() {
     return {
@@ -30,6 +28,8 @@ class Student {
       address: map['address'],
       birthDate: DateTime.parse(map['birthDate']),
       gender: map['gender'],
+      gmail: map['gmail'],
+      score: map['score'],
     );
   }
 }
