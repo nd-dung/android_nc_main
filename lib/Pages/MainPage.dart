@@ -1,6 +1,7 @@
 import 'package:english_learning/Pages/Home.dart';
 import 'package:english_learning/Pages/InsightPage.dart';
 import 'package:english_learning/Pages/TestPage.dart';
+import 'package:english_learning/Pages/students_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,8 @@ class _MainPage extends State<MainPage> {
   final List<Widget> _pages = <Widget>[
     Home(),
     TestPage(),
-    InsightPage()
+    InsightPage(),
+    const StudentsScreen(),
   ];
 
   @override
@@ -29,8 +31,8 @@ class _MainPage extends State<MainPage> {
           ),
           bottomNavigationBar: BottomNavigationBar(
             selectedFontSize: 15,
-            selectedIconTheme: IconThemeData(color: Colors.yellow, size: 40),
-            selectedItemColor: Colors.yellow,
+            selectedIconTheme: IconThemeData(color: Colors.black, size: 40),
+            selectedItemColor: Colors.black,
             selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
             unselectedItemColor: Colors.white,
             unselectedIconTheme: IconThemeData(color: Colors.white),
@@ -38,12 +40,14 @@ class _MainPage extends State<MainPage> {
             unselectedLabelStyle: TextStyle(color: Colors.white),
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home, color: Colors.white), label: 'Trang chủ'),
+                  icon: Icon(Icons.home, color: Colors.black), label: 'Trang chủ'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.book, color: Colors.white), label: 'Thi thử'),
+                  icon: Icon(Icons.book, color: Colors.black), label: 'Thi thử'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.insights, color: Colors.white),
+                  icon: Icon(Icons.insights, color: Colors.black),
                   label: 'Tiến độ'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person, color: Colors.black), label: 'Sinh viên'),
             ],
             currentIndex: _selectedIndex,
             onTap: _onItemTapped,
